@@ -1,6 +1,6 @@
 $csvData = Import-Csv -Path "export.csv" -Encoding UTF8
 
-# Select specific columns from the pipeline
+# Select necessary columns from the file
 $relevantData = $csvData | Select-Object Normal, Foil, Set, "Card Number"
 
 # Type the exported data
@@ -9,8 +9,8 @@ foreach ($row in $relevantData) {
     $tempObj = [PSCustomObject] @{
         Normal = [int] $row.Normal
         Foil = [int] $row.Foil
-        Set = [int] $row.Set
-        Number = [int] $row."Card Number"
+        Set = [string] $row.Set.TrimStart("0")
+        Number = [string] $row."Card Number".TrimStart("0")
     }
     $typedData += $tempObj
 }
@@ -23,9 +23,9 @@ $mapping = Import-Csv -Path "mapping.csv" -Encoding UTF8
 $typedMapping = @()
 foreach ($row in $mapping) {
     $tempObj = [PSCustomObject] @{
-        Set = [int] $row.Set
-        ID = [int] $row.ID
-        Number = [int] $row."Card Number"
+        Set = [string] $row.Set
+        ID = [string] $row.ID
+        Number = [string] $row."Card Number"
     }
     $typedMapping += $tempObj
 }
