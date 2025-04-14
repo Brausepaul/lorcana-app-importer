@@ -7,7 +7,7 @@ It currently only supports Android devices and was tested in German only. I am p
 # Current limitations
 - Support for promo cards is somewhat limited as of now (will be fixed).
 - Iago - Out of Reach (D23 promo) cannot be imported, this card does not show in the app for me.
-- The app shows some cards (e. g. challenge promos) that are not at Dreamborn.
+- Mickey Mouse - True Friend (promo) cannot be imported, this card does not show in the app for me.
 
 # Usage
 - Export your collection at Dreamborn. You will get a file named export.csv
