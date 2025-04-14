@@ -34,7 +34,7 @@ foreach ($row in $mapping) {
 foreach ($row in $typedData) {
     $id = $typedMapping.Where({$_.Set -eq $row.Set -and $_.Number -eq $row.Number}).ID
     if ($null -eq $id) {
-        Write-Output "ID not found for Set: $($row.Set), Number: $($row.Number)"
+        Write-Output "ID not found for Set: $($row.Set), Number: $($row.Number), card not imported."
         continue
     } else {
         if ($row.Normal -gt 0) {
