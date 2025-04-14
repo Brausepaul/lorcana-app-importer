@@ -1,4 +1,9 @@
-$csvData = Import-Csv -Path "export.csv" -Encoding UTF8
+param (
+    [String]$scriptVersion = "0.1",
+    [string]$importPath = "export.csv"
+ )
+
+$csvData = Import-Csv -Path $importPath -Encoding UTF8
 
 # Select necessary columns from the file
 $relevantData = $csvData | Select-Object Normal, Foil, Set, "Card Number"
@@ -34,7 +39,7 @@ foreach ($row in $mapping) {
 foreach ($row in $typedData) {
     $id = $typedMapping.Where({$_.Set -eq $row.Set -and $_.Number -eq $row.Number}).ID
     if ($null -eq $id) {
-        Write-Output "ID not found for Set: $($row.Set), Number: $($row.Number), card not imported."
+        Write-Output "ID not found for Set: $($row.Set), Number: $($row.Number), card not imported. Script: $scriptVersion"
         continue
     } else {
         if ($row.Normal -gt 0) {
