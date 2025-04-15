@@ -1,5 +1,5 @@
 param (
-    [String]$scriptVersion = "v0.2",
+    [String]$scriptVersion = "v0.3",
     [string]$importPath = "export.csv"
  )
 
