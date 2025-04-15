@@ -24,7 +24,7 @@ It currently only supports Android devices and was tested in German only. I am p
 9. Start Lorcana app and see your personal collection.
 
 # Bug reports
-There is a good chance of incorrectly imported cards. If you encounter any bugs, drop a mail at lorcanaappimporter@gmail.com. Please be very specific with the cards you wanted to import and what happened you think was wrong. I will need your export.csv from Dreamborn (remove stuff you do not want to show) and the text from your terminal (if any).
+There is a good chance of incorrectly imported cards. If you encounter any bugs, drop a mail at lorcanaappimporter@posteo.de. Please be very specific with the cards you wanted to import and what happened you think was wrong. I will need your export.csv from Dreamborn (remove stuff you do not want to show) and the text from your terminal (if any).
 
 # Disclaimer
 I am not affiliated with Dreamborn, Ravensburger or Disney. Trademarks belong to their respective owners. I do not give any warranty, especially if your data is lost.
