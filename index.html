@@ -60,7 +60,7 @@
             const exportFile = document.getElementById('exportFile').files[0];
 
             if (!exportFile) {
-                alert('Please upload the export CSV file.');
+                alert('Please upload the export.csv file.');
                 return;
             }
 
@@ -112,7 +112,14 @@
                 Papa.parse(text, {
                     header: true,
                     skipEmptyLines: true,
-                    complete: (results) => resolve(results.data),
+                    complete: (results) => {
+                        // Validate the structure of the parsed data
+                        if (!results.data.every(row => row.Set && row["Card Number"] && row.ID)) {
+                            reject(new Error('Invalid mapping.csv structure.'));
+                        } else {
+                            resolve(results.data);
+                        }
+                    },
                     error: (error) => reject(error),
                 });
             });
