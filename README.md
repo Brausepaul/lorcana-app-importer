@@ -8,7 +8,6 @@ Generally, the necessary code to create the userdata.json file for the app runs 
 
 # Current limitations
 
-- Iago - Out of Reach (D23 promo) cannot be imported, this card does not show in the app and it belongs to set 8.
 - Mickey Mouse - True Friend (promo) cannot be imported, this card does not show in the app for me.
 
 # Prerequisites
