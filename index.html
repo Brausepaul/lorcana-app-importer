@@ -158,7 +158,7 @@
 
             // Process each row in the export data
             exportData.forEach(row => {
-                const key = `${row.Set.replace(/^0+/, '')}-${row["Card Number"].replace(/^0+/, '')}`;
+                const key = `${row.Set.replace(/^0+/, '')}-${row["Card Number"]}`;
                 const id = mappingHash[key];
 
                 if (!id) {
