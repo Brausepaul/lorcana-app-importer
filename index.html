@@ -159,12 +159,12 @@
             // Process each row in the export data
             exportData.forEach(row => {
                 key = 0;
-                if (row.Set >= 3 && row.Set <= 8) {
-                    key = `${row.Set.replace(/^0+/, '')}-${row["Card Number"].replace(/^0+/, '')}`;
-                } else if (row.Set == 'D23' || row.Set == 'P1' || row.Set == 'P2') {
-                    key = `${row.Set.replace(/^0+/, '')}-${row["Card Number"].replace(/^0+/, '')}`;
+                if (row["Set Number"] >= 3 && row["Set Number"] <= 8) {
+                    key = `${row["Set Number"].replace(/^0+/, '')}-${row["Card Number"].replace(/^0+/, '')}`;
+                } else if (row["Set Number"] == 'D23' || row["Set Number"] == 'P1' || row["Set Number"] == 'P2') {
+                    key = `${row["Set Number"].replace(/^0+/, '')}-${row["Card Number"].replace(/^0+/, '')}`;
                 } else{
-                    key = `${row.Set.replace(/^0+/, '')}-${row["Card Number"]}`;
+                    key = `${row["Set Number"].replace(/^0+/, '')}-${row["Card Number"]}`;
                 }
                 const id = mappingHash[key];
 
