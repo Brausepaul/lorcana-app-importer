@@ -10,6 +10,7 @@ Generally, the necessary code to create the userdata.json file for the app runs 
 
 - Mickey Mouse - True Friend (promo) cannot be imported, this card does not show in the app for me.
 - A whole new world (promo) cannot be imported, this card does not show in the app for me.
+- Dreamborn currently does not support rainbow / starter deck foils.
 
 # Prerequisites
 
