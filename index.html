@@ -29,7 +29,7 @@
     </p>    
     <h3>Usage</h3>
     <p><ol>
-        <li>Export your collection at Dreamborn. You will get a file named something-something.csv</li>
+        <li>Export your collection at Dreamborn. You will get a file named something-something.csv. Use the backup option!</li>
         <li>Upload the csv file from step 1 unaltered here and hit the "Click to convert" button.</li>
         <li>Optional but highly recommended: backup you previous userdata.json from your phone located at Android\data\com.ravensburger.disney.lorcana\files</li>
         <li>Fully close down the Lorcana app on your phone.</li>
@@ -40,7 +40,7 @@
 
 
     <form id="csvForm">
-        <label for="exportFile">Select your export.csv:</label><br><br>
+        <label for="exportFile">Select your exported csv file:</label><br><br>
         <input type="file" id="exportFile" accept=".csv" required><br><br>
 
         <button type="submit">Click to convert</button>
@@ -174,24 +174,33 @@
                     logMessage(`ID not found for Set: ${row["Set Number"]}, Number: ${row["Card Number"]}, card not imported.`);
                     return;
                 }
-
-                // Add Normal cards
-                if (parseInt(row.Count, 10) > 0 && row.Variant == 'normal') {
+                // We need to distinguish between Epics and other cards
+                if (parseInt(row.Count, 10) > 0 && (row.Rarity == 'Mythisch' || row.Rarity == 'Epic')) {
+                    // Epics rarity is always regular for the official app
                     h.OwnedCardQuantitiesV2.push({
                         Id: id,
                         Type: "Regular",
                         Quantity: parseInt(row.Count, 10)
                     });
-                }
+                } else {
+                    // Add Normal cards
+                    if (parseInt(row.Count, 10) > 0 && row.Variant == 'normal') {
+                        h.OwnedCardQuantitiesV2.push({
+                            Id: id,
+                            Type: "Regular",
+                            Quantity: parseInt(row.Count, 10)
+                        });
+                    }
 
-                // Add Foil cards
-                if (parseInt(row.Count, 10) > 0 && row.Variant == 'foil') {
-                    h.OwnedCardQuantitiesV2.push({
-                        Id: id,
-                        Type: "Foiled",
-                        Quantity: parseInt(row.Count, 10)
-                    });
-                }
+                    // Add Foil cards
+                    if (parseInt(row.Count, 10) > 0 && row.Variant == 'foil') {
+                        h.OwnedCardQuantitiesV2.push({
+                            Id: id,
+                            Type: "Foiled",
+                            Quantity: parseInt(row.Count, 10)
+                        });
+                    }
+                }                
             });
 
             logMessage('Processing completed.');

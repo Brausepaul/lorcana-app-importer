@@ -1,6 +1,6 @@
 # lorcana-app-importer
 
-A simple webpage to create a file readable by the official Lorcana companion app. It will take the export.csv from Dreamborn (https://dreamborn.ink) and creates a json file the official Lorcana app can read. Please read this file in total before using this.
+A simple webpage to create a file readable by the official Lorcana companion app. It will take the exported csv file from Dreamborn (https://dreamborn.ink) and creates a json file the official Lorcana app can read. Please read this file in total before using this.
 
 # Important notes
 
