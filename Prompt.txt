@@ -1,0 +1,1 @@
+In mapping.csv, add entries starting in line 2488 for set 11, card number 225 and id 2688 up to set 11, card number 240 and id 2703.
