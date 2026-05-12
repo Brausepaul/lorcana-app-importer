@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lorcana app importer</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="js/papaparse.min.js"></script>
 </head>
 <body>
-    <h1>Dreamborn => Lorcana app converter</h1>
+    <div class="container">
+        <h1>Dreamborn => Lorcana app converter</h1>
     <p>Select your Dreamborn collection (a csv -> "comma separated values") to generate a file that can be used by Lorcana's official app.</p>
     <h3>Notes</h3>    
     <p>I am not affiliated with Dreamborn, Ravensburger or Disney. Trademarks belong to their respective owners. This tool is provided as-is. I am not responsible for any issues that may arise from its use. Use at your own risk.<br>
@@ -51,6 +53,14 @@
     <script>
         function logMessage(message) {
             const logElement = document.getElementById('logMessages');
+            const logHeading = document.querySelector('form h3:last-of-type');
+            
+            // Show log section on first message
+            if (!logElement.classList.contains('shown')) {
+                logElement.classList.add('shown');
+                logHeading.classList.add('shown');
+            }
+            
             logElement.textContent += message + '\n';
         }
 
@@ -207,5 +217,6 @@
             return h;
         }
     </script>
+    </div>
 </body>
 </html>
