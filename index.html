@@ -184,8 +184,8 @@
                     logMessage(`ID not found for Set: ${row["Set Number"]}, Number: ${row["Card Number"]}, card not imported.`);
                     return;
                 }
-                // We need to distinguish between Epics and other cards
-                if (parseInt(row.Count, 10) > 0 && (row.Rarity == 'Mythisch' || row.Rarity == 'Epic')) {
+                // We need to distinguish between Epics, Enchanteds and other cards
+                if (parseInt(row.Count, 10) > 0 && (row.Rarity == 'Mythisch' || row.Rarity == 'Epic' || row.Rarity == 'Verzaubert' || row.Rarity == 'Enchanted')) {
                     // Epics rarity is always regular for the official app
                     h.OwnedCardQuantitiesV2.push({
                         Id: id,
