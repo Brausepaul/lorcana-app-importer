@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "papaparse": "file:./js"
+  }
+}
